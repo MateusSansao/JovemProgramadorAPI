@@ -2,6 +2,7 @@
 
 namespace JovemProgramadorAPI.Controllers
 {
+    
     public class AlunoController : Controller
     {
         public IActionResult Index()
