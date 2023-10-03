@@ -1,4 +1,5 @@
-﻿using Modelo_Infra.Repositorio.Interfaces;
+﻿
+using Modelo_Infra.Repositorio.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,18 @@ namespace Modelo_Infra.Repositorio
 
         public Aluno BuscarId(int id)
         {
-            return _bancoContexto.Aluno.FirstOrdefault(x => x.Id == id);    
+            List<Aluno> alunos = new List<Aluno>();
+
+
+
+
+            alunos.Add(new Aluno { Nome = "Katia", Id = 1 });
+            alunos.Add(new Aluno { Nome = "Maria", Id = 2 });
+            alunos.Add(new Aluno { Nome = "Manoel", Id = 3 });
+
+            var aluno = alunos.FirstOrDefault(x => x.Id == id);
+
+            return aluno;
         }
     }
 }

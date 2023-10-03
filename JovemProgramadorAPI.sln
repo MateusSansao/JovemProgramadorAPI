@@ -11,7 +11,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Application", "2-Applicat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Domain", "3-Domain", "{5854F5C5-2EA5-4D0B-A8BB-2C1F54B52CB7}"
 	ProjectSection(SolutionItems) = preProject
-		Aluno.cs = Aluno.cs
 		Retorno.cs = Retorno.cs
 	EndProjectSection
 EndProject
@@ -25,7 +24,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelo.Domain", "Modelo.Dom
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1-Data", "4.1-Data", "{F36AE40E-CE0D-4A7B-944F-AF807E7540F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelo,Infra", "Modelo,Infra\Modelo,Infra.csproj", "{37706F43-2337-40AF-8BE8-EFB94E61DBEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modelo,Infra", "Modelo,Infra\Modelo,Infra.csproj", "{37706F43-2337-40AF-8BE8-EFB94E61DBEA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

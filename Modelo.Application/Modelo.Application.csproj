@@ -43,10 +43,15 @@
     <Reference Include="Microsoft.Analytics.Types" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlunoApplication.cs" />
-    <Compile Include="Interfaces\ITesteApplication.cs" />
+    <Compile Include="AlunoAplication.cs" />
+    <Compile Include="Interfaces\IAlunoApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TesteApplication.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Modelo.Domain\Modelo.Domain.csproj">
+      <Project>{0BDA07B4-B311-40BE-AA4A-1D0EED2523C4}</Project>
+      <Name>Modelo.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
