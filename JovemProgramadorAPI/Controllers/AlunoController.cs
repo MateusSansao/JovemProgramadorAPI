@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Modelo.Application.Interfaces;
 
 namespace JovemProgramadorAPI.Controllers
 {
@@ -16,7 +17,7 @@ namespace JovemProgramadorAPI.Controllers
         {
             try
             {
-                var aluno = _alunoApplication.BuscarAluno(id);
+                var aluno = _alunoApplication.BuscaAluno(id);
                 return Ok(aluno);
             }
             catch (Exception)

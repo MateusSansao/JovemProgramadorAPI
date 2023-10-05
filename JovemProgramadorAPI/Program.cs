@@ -1,7 +1,14 @@
 
 
 
-using Modelo_Infra.Repositorio;
+
+
+using Microsoft.EntityFrameworkCore;
+using Modelo.Application;
+using Modelo.Application.Interfaces;
+using Modelo.Infra;
+using Modelo.Infra.Repositorio;
+using Modelo.Infra.Repositorio.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,7 +24,8 @@ var connectionstring = builder.Configuration.GetConnectionString("StringConexao"
 builder.Services.AddDbContext<BancoContexto>(options => options.UseSqlServer(connectionstring));
 
 builder.Services.AddScoped<IAlunoApplication, AlunoApplication>();
-builder.Services.AddScoped<AlunoRepositorio, AlunoRepositorio>();
+builder.Services.AddScoped<IAlunoRepositorio, AlunoRepositorio>();
+
 
 var app = builder.Build();
 
