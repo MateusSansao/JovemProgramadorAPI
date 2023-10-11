@@ -11,4 +11,6 @@ namespace Modelo.Application.Interfaces
     {
         Aluno BuscaAluno(int id);
     }
+   
+
 }

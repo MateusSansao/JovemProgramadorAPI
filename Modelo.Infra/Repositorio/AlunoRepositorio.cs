@@ -38,6 +38,11 @@ namespace Modelo.Infra.Repositorio
             //return _bancoContexto.Aluno.FirstOrDefault(x => x.Id == id);
         }
 
+        public void EditarDadosAluno(Aluno aluno)
+        {
+            _bancoContexto.Aluno.Update(aluno);
+            _bancoContexto.SaveChanges();   
+        }
 
 
 

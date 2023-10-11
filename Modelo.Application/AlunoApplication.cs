@@ -19,5 +19,7 @@ namespace Modelo.Application
             var aluno = _alunoRepositorio.BuscarId(id);
             return aluno;
         }
+       
+
     }
 }

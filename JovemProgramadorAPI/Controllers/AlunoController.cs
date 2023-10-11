@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Modelo.Application.Interfaces;
+using Modelo.Domain;
 
 namespace JovemProgramadorAPI.Controllers
 {
@@ -19,6 +20,33 @@ namespace JovemProgramadorAPI.Controllers
             {
                 var aluno = _alunoApplication.BuscaAluno(id);
                 return Ok(aluno);
+            }
+            catch (Exception)
+            {
+                return BadRequest("Erro");
+            }
+        }
+
+        [HttpPost("InserirDadosAluno")]
+        public async Task<IActionResult> InserirDadosAluno([FromBody] Aluno aluno)
+        {
+            try
+            {
+                // var aluno = _alunoApplication.InserirAluno(id);
+                return Ok("Aluno Inserido com sucesso");
+            }
+            catch (Exception)
+            {
+                return BadRequest("Erro");
+            }
+        }
+        [HttpPut("EditarDadosAluno")]
+        public async Task<IActionResult> EditarDadosAluno([FromBody] Aluno aluno)
+        {
+            try
+            {
+                // var aluno = _alunoApplication.InserirAluno(id);
+                return Ok("Dados do aluno editados com sucesso");
             }
             catch (Exception)
             {

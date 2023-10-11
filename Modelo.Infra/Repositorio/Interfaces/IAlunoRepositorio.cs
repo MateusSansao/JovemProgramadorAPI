@@ -9,6 +9,7 @@ namespace Modelo.Infra.Repositorio.Interfaces
 {
     public interface IAlunoRepositorio
     {
-       Aluno BuscarId(int id); 
+        Aluno BuscarId(int id);
     }
+   
 }
