@@ -28,11 +28,11 @@ namespace JovemProgramadorAPI.Controllers
         }
 
         [HttpPost("InserirDadosAluno")]
-        public async Task<IActionResult> InserirDadosAluno([FromBody] Aluno aluno)
+        public async Task<IActionResult> AdicionarDadosAluno([FromBody] Aluno aluno)
         {
             try
             {
-                // var aluno = _alunoApplication.InserirAluno(id);
+                _alunoApplication.AdicionarDadosAluno(aluno);
                 return Ok("Aluno Inserido com sucesso");
             }
             catch (Exception)
@@ -41,16 +41,20 @@ namespace JovemProgramadorAPI.Controllers
             }
         }
         [HttpPut("EditarDadosAluno")]
-        public async Task<IActionResult> EditarDadosAluno([FromBody] Aluno aluno)
+        public async Task<IActionResult> EditarDadosAluno([FromBody] AlunoDto aluno)
         {
+            Retorno<Aluno> retorno = new(null);
             try
             {
-                // var aluno = _alunoApplication.InserirAluno(id);
-                return Ok("Dados do aluno editados com sucesso");
+                _alunoApplication.EditarDadosAluno(Aluno );
+                retorno.CarregaRetorno(true, "aluno editado com sucesso", 200);
+                return Ok(retorno);
+
             }
-            catch (Exception)
+            catch (Exception e )
             {
-                return BadRequest("Erro");
+                retorno.CarregaRetorno(false, e.Message, 400);
+                return BadRequest(retorno);
             }
         }
     }
