@@ -23,7 +23,7 @@ namespace Modelo.Application
 
         public Aluno AdicionarDadosAluno(Aluno aluno)
         {
-            _alunoRepositorio.AdicionarDadosAluno(Aluno);
+            _alunoRepositorio.AdicionarDadosAluno(aluno);
             return aluno;
         }
         

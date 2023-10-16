@@ -41,12 +41,12 @@ namespace JovemProgramadorAPI.Controllers
             }
         }
         [HttpPut("EditarDadosAluno")]
-        public async Task<IActionResult> EditarDadosAluno([FromBody] AlunoDto aluno)
+        public async Task<IActionResult> EditarDadosAluno([FromBody] AlunoDto alunoDto)
         {
             Retorno<Aluno> retorno = new(null);
             try
             {
-                _alunoApplication.EditarDadosAluno(Aluno );
+                _alunoApplication.EditarDadosAluno(alunoDto);
                 retorno.CarregaRetorno(true, "aluno editado com sucesso", 200);
                 return Ok(retorno);
 
