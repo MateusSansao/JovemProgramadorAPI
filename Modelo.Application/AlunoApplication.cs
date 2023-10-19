@@ -6,7 +6,7 @@ using System.Reflection.Metadata.Ecma335;
 
 namespace Modelo.Application
 {
-   
+
     public class AlunoApplication : IAlunoApplication
     {
         private readonly IAlunoRepositorio _alunoRepositorio;
@@ -26,7 +26,7 @@ namespace Modelo.Application
             _alunoRepositorio.AdicionarDadosAluno(aluno);
             return aluno;
         }
-        
+
         public void EditarDadosAluno(AlunoDto alunoDto)
         {
             Aluno aluno = new();
@@ -36,7 +36,13 @@ namespace Modelo.Application
 
             _alunoRepositorio.EditarDadosAluno(aluno);
         }
-       
+        public void ExcluirAluno(Aluno aluno)
+        {
 
+            _alunoRepositorio.ExcluirAluno(aluno);
+
+
+
+        }
     }
 }

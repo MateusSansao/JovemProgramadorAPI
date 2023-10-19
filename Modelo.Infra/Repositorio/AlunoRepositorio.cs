@@ -51,6 +51,11 @@ namespace Modelo.Infra.Repositorio
             _bancoContexto.Aluno.Update(aluno);
             _bancoContexto.SaveChanges();
         }
-
+        
+        public void ExcluirAluno(Aluno aluno)
+        {
+            _bancoContexto.Aluno.Remove(aluno);
+            _bancoContexto.SaveChanges();
+        }
     }
 }

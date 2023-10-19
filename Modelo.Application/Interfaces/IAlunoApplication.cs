@@ -12,6 +12,9 @@ namespace Modelo.Application.Interfaces
         Aluno BuscaAluno(int id);
         Aluno AdicionarDadosAluno(Aluno aluno);
         void EditarDadosAluno(AlunoDto alunoDtO);
+        void ExcluirAluno(Aluno aluno);
+
+
     }
    
 

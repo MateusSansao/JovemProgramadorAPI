@@ -14,6 +14,9 @@ namespace Modelo.Infra.Repositorio.Interfaces
         void AdicionarDadosAluno(Aluno aluno);
 
         void EditarDadosAluno(Aluno aluno);
+        void ExcluirAluno(Aluno aluno);
+
+
     }
    
 }

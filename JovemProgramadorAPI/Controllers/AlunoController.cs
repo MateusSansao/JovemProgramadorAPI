@@ -20,10 +20,11 @@ namespace JovemProgramadorAPI.Controllers
             {
                 var aluno = _alunoApplication.BuscaAluno(id);
                 return Ok(aluno);
+                
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return BadRequest("Erro");
+                return BadRequest("Erro ao buscar aluno");
             }
         }
 
@@ -51,11 +52,51 @@ namespace JovemProgramadorAPI.Controllers
                 return Ok(retorno);
 
             }
-            catch (Exception e )
+            catch (Exception e)
             {
                 retorno.CarregaRetorno(false, e.Message, 400);
                 return BadRequest(retorno);
             }
+        }
+        
+        [HttpDelete("DeletarAluno{id}")]
+
+        public async Task<IActionResult> ExcluirAlunos(int id)
+
+        {
+
+            Retorno<Aluno> retorno = new(null);
+
+
+
+            try
+
+            {
+
+
+
+                var aluno = _alunoApplication.BuscaAluno(id);
+
+
+
+                _alunoApplication.ExcluirAluno(aluno);
+
+                retorno.CarregaRetorno(true, "O id informado foi excluído com êxito", 200);
+
+                return Ok(retorno);
+
+            }
+
+            catch (Exception e)
+
+            {
+
+                retorno.CarregaRetorno(false, e.Message, 400);
+
+                return BadRequest(retorno);
+
+            }
+
         }
     }
 }
