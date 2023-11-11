@@ -4,9 +4,9 @@ using Modelo.Domain;
 
 namespace JovemProgramadorAPI.Controllers
 {
-    [Route("api/controller")]
+    [Route("api/[controller]")]
     [ApiController]
-    public class AlunoController : Controller
+    public class AlunoController : ControllerBase
     {
         private readonly IAlunoApplication _alunoApplication;
         public AlunoController(IAlunoApplication alunoApplication)
@@ -96,6 +96,41 @@ namespace JovemProgramadorAPI.Controllers
                 return BadRequest(retorno);
 
             }
+
+        }
+        [HttpGet("BuscarDadosAlunos")]
+        public async Task<IActionResult> BuscarDadosAlunos()
+        {
+            Retorno<List<Aluno>> retorno = new(null);
+            try
+            {
+                var alunos = _alunoApplication.BuscarAlunos();
+
+
+
+                if (alunos.Any())
+                {
+                    retorno.CarregaRetorno(alunos, true, "Consulta realizada com sucesso", 200);
+                }
+                else
+                {
+                    retorno.CarregaRetorno(true, "Nenhum aluno encontrado", 204);
+                }
+
+
+
+                return Ok(retorno);
+
+
+
+            }
+            catch (Exception e)
+            {
+                retorno.CarregaRetorno(true, e.Message, 400);
+                return BadRequest(retorno);
+            }
+
+
 
         }
     }

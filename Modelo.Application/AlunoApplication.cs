@@ -44,5 +44,12 @@ namespace Modelo.Application
 
 
         }
+        public List<Aluno> BuscarAlunos()
+        {
+            var aluno = _alunoRepositorio.BuscarAlunos();
+            return aluno;
+
+        }
+
     }
 }

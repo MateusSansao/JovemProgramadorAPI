@@ -57,5 +57,10 @@ namespace Modelo.Infra.Repositorio
             _bancoContexto.Aluno.Remove(aluno);
             _bancoContexto.SaveChanges();
         }
+
+        public List<Aluno> BuscarAlunos()
+        {
+            return _bancoContexto.Aluno.ToList();
+        }
     }
 }
